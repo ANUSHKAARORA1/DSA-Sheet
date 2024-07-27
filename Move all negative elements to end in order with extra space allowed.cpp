@@ -23,6 +23,26 @@ void negativetoend(int arr[ ],int n){
     }
     
 }
+//method 2
+// void segregateElements(vector<int>& arr) {
+//         int n=arr.size();
+//       vector<int>result;
+//       vector<int>negatives;
+//       for(int i=0;i<n;i++){
+//           if(arr[i]>=0){
+//               result.push_back(arr[i]);
+//           }
+//           else{
+//               negatives.push_back(arr[i]);
+//           }
+//       }
+//       for(int neg:negatives){
+//           result.push_back(neg);
+//       }
+//       for(int i=0;i<n;i++){
+//           arr[i]=result[i];
+//       }
+//     }
 int main(){
     int arr[10000];
     int n;
