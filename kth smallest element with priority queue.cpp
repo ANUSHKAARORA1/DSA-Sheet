@@ -1,5 +1,5 @@
-// find kth smallest element with priority queue
-
+// find kth smallest element without priority queue
+//will do with priority queue after studying
 #include<bits/stdc++.h>
 using namespace std;
 int main(){
