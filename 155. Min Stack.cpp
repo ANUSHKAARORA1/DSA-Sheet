@@ -1,26 +1,32 @@
 155. Min Stack
-class Solution{
+class MinStack {
 public:
-bool ismatching(char a, char b){
-    return ((a=='[' && b==']') || (a=='{' && b=='}') || (a=='(' && b==')'));
-}
-    bool isValid(string s){
-        stack<char>st;
-        for(int i=0;i<s.length();i++)
-        {
-            if(s[i]=='(' || s[i]=='{' || s[i]=='[')
-         st.push(s[i]);
-          else
-          {
-            if(st.empty())return false;
-            if(ismatching(st.top(),s[i]))
-                st.pop();
-            else
-                return false;
-          }
-         }
-         if(st.empty())return true;
-         else return false;
-        }
+stack<int>s1,s2;
+    MinStack() {
+        
+    }
     
+    void push(int val) {
+        //all elements are present in s1 but the elements with min value is present in s2 and s2 top will be the min eleemnt 
+        s1.push(val);
+        // always check s2.empty() then check if 
+        if(s2.empty() || val<=s2.top()){
+            s2.push(val);
+        }
+    }
+    
+    void pop() {
+        if(s1.top()==s2.top()){
+            s2.pop();
+    }
+    s1.pop();
+    }
+    
+    int top() {
+      return  s1.top();
+    }
+    
+    int getMin() {
+        return s2.top();
+    }
 };
